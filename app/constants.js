@@ -50,7 +50,8 @@
             },
             downloadLocalizationKey: '[download]',
             containerSelector: '.document-container',
-            sizeAttrName: 'data-document-size-kb',
+            infoSelector: '.document-info',
+            sizeAttrName: 'data-document-size',
             typeAttrName: 'data-document-type',
             downloadBtnSelector: '.download-document-btn'
         }

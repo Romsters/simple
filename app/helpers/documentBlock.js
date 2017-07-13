@@ -24,21 +24,18 @@ define(['localizationManager', 'constants'], function (localizationManager, cons
             }
             var $typeIconWrapper = $('<div class="document-icon"></div>');
             $typeIconWrapper.append($typeIcon);
-            $container.prepend($('<div class="separator"></div>'));
-            $container.prepend($typeIconWrapper);
+            var $infoContainer = $container.find(constants.documents.infoSelector);
+            $infoContainer.prepend($('<div class="separator"></div>'));
+            $infoContainer.prepend($typeIconWrapper);
             var content = $output.children()[0];
             return content;
         }
     };
 
-    function getSize(sizeKb) {
-        var size = '';
-        if (!sizeKb) {
-            return '0 Kb';
+    function getSize(size) {
+        if (!size) {
+            return '0 MB';
         }
-        if (sizeKb > 1024) {
-            size = (sizeKb / 1024).toFixed(2);
-        }
-        return size + ' MB';
+        return (size / 1048576).toFixed(2) +  ' MB';
     }
 });
